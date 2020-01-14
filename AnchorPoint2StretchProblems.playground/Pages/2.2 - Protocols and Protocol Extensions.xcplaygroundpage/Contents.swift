@@ -15,9 +15,104 @@
  */
 import Foundation
 
+protocol Vehicle: class {
+    var speed: Double {get set}
+    var isMoving: Bool {get set}
+    func startMoving()
+    func stopMoving()
+}
+
+extension Vehicle {
+    func startMoving() {
+        if !isMoving {
+            isMoving = true
+            print("Started Moving")
+        }else{
+            print("Already moving")
+        }
+    }
+    
+    func stopMoving() {
+        if isMoving {
+            isMoving = false
+            print("Stopped Moving")
+        }else{
+            print("Already stopped")
+        }
+    }
+    
+    
+}
+
+protocol Racer: Vehicle {
+    func race() -> Double
+}
+
+extension Racer {
+    func race() -> Double {
+        return speed/1000
+    }
+}
+
+class LawnMower: Vehicle {
+    var speed: Double
+    var isMoving: Bool
+    
+    init(speed: Double, isMoving: Bool) {
+        self.speed = speed
+        self.isMoving = isMoving
+    }
+}
+
+class Truck: Vehicle {
+    var speed: Double
+    var isMoving: Bool
+    
+    init(speed: Double, isMoving: Bool) {
+        self.speed = speed
+        self.isMoving = isMoving
+    }
+}
+
+
+class Tesla: Racer {
+    var speed: Double
+    var isMoving: Bool
+    
+    init(speed: Double, isMoving: Bool) {
+           self.speed = speed
+           self.isMoving = isMoving
+    }
+}
 
 
 
+class Lambo: Racer {
+    var speed: Double
+    var isMoving: Bool
+    
+    init(speed: Double, isMoving: Bool) {
+           self.speed = speed
+           self.isMoving = isMoving
+    }
+}
+
+let lambo = Lambo(speed: 80, isMoving: true)
+
+let tesla = Tesla(speed: 100, isMoving: true)
+
+
+func raceTwo(carOne: Racer, carTwo: Racer) -> Racer? {
+    if carOne.race() > carTwo.race() {
+        return carOne
+    }else if carTwo.race() > carOne.race(){
+        return carTwo
+    }else{
+        return nil
+    }
+}
+
+let winner = raceTwo(carOne: lambo, carTwo: tesla)
 
 
 //: [Number Printer](@next)
