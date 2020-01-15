@@ -18,8 +18,6 @@ import Foundation
 protocol Vehicle: class {
     var speed: Double {get set}
     var isMoving: Bool {get set}
-    func startMoving()
-    func stopMoving()
 }
 
 extension Vehicle {
@@ -44,10 +42,7 @@ extension Vehicle {
     
 }
 
-protocol Racer: Vehicle {
-    func race() -> Double
-}
-
+protocol Racer: Vehicle {}
 extension Racer {
     func race() -> Double {
         return speed/1000
@@ -73,6 +68,14 @@ class Truck: Vehicle {
         self.isMoving = isMoving
     }
 }
+let truck = Truck(speed: 40, isMoving: true)
+let lawnMower = LawnMower(speed: 5, isMoving: false)
+
+truck.stopMoving()
+truck.stopMoving()
+
+lawnMower.startMoving()
+lawnMower.startMoving()
 
 
 class Tesla: Racer {

@@ -35,9 +35,90 @@
 import Foundation
 
 
+func printLine() {
+    print("  ---")
+}
 
+func printTwoVert() {
+    print(" |   | ")
+}
 
+func printOneVertLeft() {
+    print(" |")
+}
 
+func printOneVertRight() {
+    print("     |")
+}
 
+func numberPrinter(num: Int) {
+    if num > 9 || num < 0 {
+        print("Invalid param")
+        return
+    }
+    
+    if num == 0 {
+        printLine()
+        printTwoVert()
+        printTwoVert()
+        printTwoVert()
+        printLine()
+    } else if num == 1 {
+        printOneVertLeft()
+        printOneVertLeft()
+        printOneVertLeft()
+        printOneVertLeft()
+        printOneVertLeft()
+    } else if num == 2 {
+        printLine()
+        printOneVertRight()
+        printLine()
+        printOneVertLeft()
+        printLine()
+    } else if num == 3 {
+        printLine()
+        printOneVertRight()
+        printLine()
+        printOneVertRight()
+        printLine()
+    } else if num == 4 {
+        printTwoVert()
+        printTwoVert()
+        printLine()
+        printOneVertRight()
+        printOneVertRight()
+    } else if num == 5 {
+        printLine()
+        printOneVertLeft()
+        printLine()
+        printOneVertRight()
+        printLine()
+    } else if num == 6 {
+        printLine()
+        printOneVertLeft()
+        printLine()
+        printTwoVert()
+        printLine()
+    } else if num == 7 {
+        printLine()
+        printOneVertRight()
+        printOneVertRight()
+        printOneVertRight()
+        printOneVertRight()
+    } else if num == 8 {
+        printLine()
+        printTwoVert()
+        printLine()
+        printTwoVert()
+        printLine()
+    } else if num == 9 {
+        printLine()
+        printTwoVert()
+        printLine()
+        printOneVertRight()
+        printLine()
+    }
+}
 
+numberPrinter(num: 2)
 //: [Ternary Operator](@next)
