@@ -25,7 +25,58 @@
  */
 import Foundation
 
+let arr = [1, 51, 26, 50, 2, 5, 7, 6, 6, 8]
+
+//print(true && false ? "Result is \(true && false)" : true || false ? "Result is \(true || false)" : false || false ? "Result is \(false || false)" : "The condition is unknown")
 
 
+func highLow(arr: [Int]) {
+    for (i, num) in arr.enumerated() {
+        print(arr[i])
+        
+//        if num < 50 {
+//            print("Low")
+//        } else {
+//            print("High")
+//        }
+        
+        print(num < 50 ? "Low" : "High")
+        
+//        if num % 13 == 0 {
+//            print("Didn't learn this one in school")
+//        } else {
+//            print("That's easy")
+//        }
+        
+        print(num % 13 == 0 ? "Didn't learn this one in school" : "That's easy")
+        
+//        if i == 0 && num > 0 {
+//            print("Getting bigger")
+//        } else if i == 0 && num < 0 {
+//            print("It's stopped growing")
+//        } else if num > arr[i-1] {
+//            print("Getting bigger")
+//        } else {
+//            print("It's stopped growing")
+//        }
+        
+        print(i == 0 && num > 0 ? "Getting bigger" : i == 0 ? "It's stopped growing" : num > arr[i-1] ? "Getting bigger" : "It's stopped growing")
+        print("")
+    }
+}
 
+highLow(arr: arr)
 
+let name: String? = "Bob"
+let food: String? = nil
+
+let foodUW = food ?? "Empty"
+let nameUW = name ?? "Empty"
+
+print(foodUW + " " + nameUW)
+
+func nestedTernary(num: Int) {
+    print(num > 50 && num % 2 == 0 ? "big even" : num > 50 && num % 2 == 1 ? "big odd" : num % 2 == 0 ? "little even" : "little odd")
+}
+
+nestedTernary(num: 60)
